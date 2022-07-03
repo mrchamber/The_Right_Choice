@@ -27,6 +27,16 @@ function showTextNode(textNodeIndex) {
         }
     })
 
+    textNode.story.forEach(story => {
+        if (showAudio(story)) {
+            const story = document.createElement('audio')
+            story.innerText = option.text
+            story.classList.add('audio')
+            story.addEventListener('click', () => selectAudio(story))
+            optionButtonsElement.appendChild(story)
+        }
+    })
+
 }
 
 function showOption(option) {
@@ -39,6 +49,15 @@ function selectOption(option) {
         return startGame()
     }
     state = Object.assign(state, option.setState)
+    showTextNode(nextTextNodeId)
+}
+
+function selectAudio(story) {
+    const nextTextNodeId = story.nextText
+    if (nextTextNodeId <= 0) {
+        return startGame()
+    }
+    state = Object.assign(state, story.setState)
     showTextNode(nextTextNodeId)
 }
 
@@ -61,6 +80,9 @@ const textNodes = [
                 nextText: 2
             }
         ],
+        story:[
+
+        ]
     },
     {
         id: 2,

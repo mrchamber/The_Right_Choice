@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-body {
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');body {
     padding: 0;
     margin: 0;
     display: flex;
@@ -22,7 +21,7 @@ body {
     border-color: white;
     border-radius: 5px;
     box-shadow: 0 0 10px 2px;
-    font-size: 1 rem;
+    font-size: 1.5rem;
 }
 
 .rbtn-grid {
